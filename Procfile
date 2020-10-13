@@ -1,1 +1,1 @@
-web: uwsgi uwsgi.ini
+web gunicorn bayarea_mma_news:bayarea_mma_news
