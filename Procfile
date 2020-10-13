@@ -1,1 +1,1 @@
-web gunicorn bayarea_mma_news:bayarea_mma_news
+web gunicorn wsgi: app
