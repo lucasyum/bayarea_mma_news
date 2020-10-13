@@ -1,0 +1,94 @@
+{% extends "layout.html" %}
+{% block content %}
+<h2>Stock Information</h2>
+<br>
+<br>
+<table class="table table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Company</th>
+        <th scope="col">Current Price</th>
+        <th scope="col">Ticker</th>
+        <th scope="col">Link</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">1</th>
+        <td>Accenture</td>
+
+        <td><a class="mr-2" href="{{ url_for('custom.get_price', price = accenture_current_price) }}">{{ accenture_current_price }}</a></td>
+        <td>ACN</td>
+        <td><a class="mr-2" href="https://finance.yahoo.com/quote/ACN/">Accenture Info</a></td>
+      </tr>
+      <tr>
+        <th scope="row">2</th>
+        <td>Apple</td>
+
+        <td><a class="mr-2" href="{{ url_for('custom.get_price', price = apple_current_price) }}">{{ apple_current_price }}</a></td>
+        <td>AAPL</td>
+        <td><a class="mr-2" href="https://finance.yahoo.com/quote/AAPL?p=AAPL">Apple Info</a></td>
+      </tr>
+      <tr>
+        <th scope="row">3</th>
+        <td>Cisco</td>
+        <td><a class="mr-2" href="{{ url_for('custom.get_price', price = cisco_current_price) }}">{{ cisco_current_price }}</a></td>
+        <td>CSCO</td>
+        <td><a class="mr-2" href="https://finance.yahoo.com/quote/CSCO/">Cisco Info</a></td>
+      </tr>
+      <tr>
+        <th scope="row">4</th>
+        <td>Facebook</td>
+        <td><a class="mr-2" href="{{ url_for('custom.get_price', price = facebook_current_price) }}">{{ facebook_current_price }}</a></td>
+        <td>FB</td>
+        <td><a class="mr-2" href="https://finance.yahoo.com/quote/FB/">Facebook Info</a></td>
+      </tr>
+      <tr>
+        <th scope="row">5</th>
+        <td>Google</td>
+        <td><a class="mr-2" href="{{ url_for('custom.get_price', price = google_current_price) }}">{{ google_current_price }}</a></td>
+        <td>GOOGL</td>
+        <td><a class="mr-2" href="https://finance.yahoo.com/quote/GOOG/">Google Info</a></td>
+      </tr>
+      <tr>
+        <th scope="row">6</th>
+        <td>IBM</td>
+        <td><a class="mr-2" href="{{ url_for('custom.get_price', price = ibm_current_price) }}">{{ ibm_current_price }}</a></td>
+        <td>IBM</td>
+        <td><a class="mr-2" href="https://finance.yahoo.com/quote/IBM/">IBM Info</a></td>
+      </tr>
+      <tr>
+        <th scope="row">7</th>
+        <td>Intel</td>
+        <td><a class="mr-2" href="{{ url_for('custom.get_price', price = intel_current_price) }}">{{ intel_current_price }}</a></td>
+        <td>INTC</td>
+        <td><a class="mr-2" href="https://finance.yahoo.com/quote/INTC/">Intel Info</a></td>
+      </tr>
+      <tr>
+        <th scope="row">8</th>
+        <td>Microsoft</td>
+        <td><a class="mr-2" href="{{ url_for('custom.get_price', price = microsoft_current_price) }}">{{ microsoft_current_price }}</a></td>
+        <td>MSFT</td>
+        <td><a class="mr-2" href="https://finance.yahoo.com/quote/MSFT/">Microsoft Info</a></td>
+      </tr>
+      <tr>
+        <th scope="row">9</th>
+        <td>Palo Alto Networks</td>
+        <td><a class="mr-2" href="{{ url_for('custom.get_price', price = panw_current_price) }}">{{ panw_current_price }}</a></td>
+        <td>PANW</td>
+        <td><a class="mr-2" href="https://finance.yahoo.com/quote/PANW">Palo Alto Networks Info</a></td>
+      </tr>
+      <tr>
+        <th scope="row">10</th>
+        <td>Service Now</td>
+        <td><a class="mr-2" href="{{ url_for('custom.get_price', price = snow_current_price) }}">{{ snow_current_price }}</a></td>
+        <td>SNOW</td>
+        <td><a class="mr-2" href="https://finance.yahoo.com/quote/SNOW">Service Now Info</a></td>
+      </tr>
+      
+    </tbody>
+  </table>
+{% endblock content %}
+

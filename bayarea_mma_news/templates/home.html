@@ -1,0 +1,96 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<h1 style="text-align:center">Bay Area News Reports</h1>
+<br>
+<br>
+<center>
+<img src="https://media.bizj.us/view/img/7001112/aerials-1*750xx5184-2916-0-270.jpg" alt="Simply Easy Learning" width="400"
+         height="240">
+</center>
+<br>
+<br>
+<br>
+<table class="table table-bordered">
+  
+    <thead>
+      <tr>
+        <th scope="col" width=25% style="text-align:center"><h1 style="color:FireBrick;font-size:25px;">News Outlet</h1></th>
+        <th scope="col" style="text-align:center"><h1 style="color:FireBrick;font-size:25px;">Headline</h1></th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="text-align:center"><a href="https://www.eastbaytimes.com/">East Bay News</a></td>
+        <td class="mr-2" href="{{ url_for('main.get_news', east_bay_title=east_bay_title, east_bay_description=east_bay_description, east_bay_url_link=east_bay_url_link) }}"><a href= {{ east_bay_url_link }}>{{ east_bay_title }}</a><br><br>{{ east_bay_description }}</td>
+        
+        
+        
+      </tr>
+      <tr>
+        <td style="text-align:center"><a href="https://www.marinij.com/">Marin Independent Journal</a></td>
+        <td class="mr-2" href="{{ url_for('main.get_news', north_bay_title=north_bay_title, north_bay_description=north_bay_description, north_bay_link=north_bay_url_link) }}"><a href= {{ north_bay_url_link }}>{{ north_bay_title }}</a><br><br>{{ north_bay_description }}</td>
+
+        
+      </tr>
+      <tr>
+        <td style="text-align:center"><a href="https://abc7news.com/">ABC7 News</a></td>
+        <td class="mr-2" href="{{ url_for('main.get_news', sf_title=sf_title, sf_description=sf_description, sf_url_link=sf_url_link) }}"><a href= {{ sf_url_link }}>{{ sf_title }}</a><br><br>{{ sf_description }}</td>
+      <tr>
+        <td style="text-align:center"><a href="https://www.mercurynews.com/location/san-jose/">Mercury News</a></td>
+        <td class="mr-2" href="{{ url_for('main.get_news', south_bay_title=south_bay_title, south_bay_description=south_bay_description, south_bay_url_link = south_bay_url_link) }}"><a href= {{ south_bay_url_link }}>{{ south_bay_title }}</a><br><br>{{ south_bay_description }}</td>
+      </tr>
+
+        
+      </tr>
+    </tbody>
+  </table>
+  <br>
+  <br>
+
+  <h1 style="text-align:center">Bay Area Temperatures</h1>
+  <br>
+  <br>
+
+
+  <table class="table table-bordered">
+  
+    <thead>
+      <tr>
+        <th scope="col" width=25% style="text-align:center"><h1 style="color:FireBrick;font-size:25px;">City</h1></th>
+        <th scope="col" width=100% style="text-align:center"><h1 style="color:FireBrick;font-size:25px;">Weather Description</h1></th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="text-align:center"><a href="https://www.accuweather.com/en/us/fremont/94538/weather-forecast/332130">Fremont</a></td>
+        <td class="mr-2" href="{{ url_for('main.get_news', fremont_weather = fremont_weather) }}">{{ fremont_weather }}</a></td>
+        
+        <tr>
+          <td style="text-align:center"><a href="https://www.accuweather.com/en/us/san-francisco/94103/weather-forecast/347629">San Francisco</a></td>
+          <td class="mr-2" href="{{ url_for('main.get_news', san_francisco_weather = san_francisco_weather) }}">{{ san_francisco_weather }}</a></td>
+        
+      </tr>
+      <tr>
+        <td style="text-align:center"><a href="https://www.accuweather.com/en/us/san-jose/95110/hourly-weather-forecast/347630">San Jose</a></td>
+        <td class="mr-2" href="{{ url_for('main.get_news', san_jose_weather = san_jose_weather) }}">{{ san_jose_weather }}</a></td>
+        
+      </tr>
+      <tr>
+        <td style="text-align:center"><a href="https://www.accuweather.com/en/us/marin-city-ca/94965/weather-forecast/327093">Marin City</a></td>
+        <td class="mr-2" href="{{ url_for('main.get_news', marin_city_weather = marin_city_weather) }}">{{ marin_city_weather }}</a></td>
+        
+      </tr>
+    </tbody>
+  </table>
+  <br>
+  <br>
+  <br>
+  <br>
+  <div class="tenor-gif-embed" data-postid="17932554" data-share-method="host" data-width="50%" data-aspect-ratio="1.0"><a href="https://tenor.com/view/cat-cat-jam-nod-pet-kitty-gif-17932554">Cat Cat Jam GIF</a> from <a href="https://tenor.com/search/cat-gifs">Cat GIFs</a></div><script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+
+ 
+
+{% endblock content %}

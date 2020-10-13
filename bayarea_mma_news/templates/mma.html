@@ -1,0 +1,137 @@
+{% extends "layout.html" %}
+{% block content %}
+    <p>{{ Rankings }}</p>
+
+  <br>
+  <h1 style="text-align:center">MMA News Reports</h1>  
+  <br>
+  <br>
+
+  <table class="table table-bordered">
+  
+    <thead>
+      <tr>
+        <th scope="col" width=30% style="text-align:center"><h1 style="color:FireBrick;font-size:25px;">News Source</h1></th>
+        <th scope="col" width=100% style="text-align:center"><h1 style="color:FireBrick;font-size:25px;">Headline</h1></th>
+ 
+
+      </tr>
+    </thead>
+    <tbody>
+
+        <tr>
+            <td style="text-align:center"><a href ={{ mma_mania_url }}>MMA Mania</a></td>
+            <td class="mr-2" href="{{ url_for('custom.get_rankings', mma_mania_headline = mma_mania_headline) }}"><a href = {{ mma_mania_headline_link }}>{{ mma_mania_headline }}</a><br><br>{{ mma_mania_description }}</td>
+      
+
+
+        <tr>
+            <td style="text-align:center"><a href ={{ mma_weekly_url }}>MMA Weekly</a></td>
+            <td class="mr-2" href="{{ url_for('custom.get_rankings', mma_weekly_headline = mma_weekly_headline) }}"><a href = {{ mma_weekly_headline_link }}>{{ mma_weekly_headline }}</a><br><br>{{ mma_weekly_description }}</td>
+       
+        <tr>
+            <td style="text-align:center"><a href ={{ bloody_elbow_url }}>Bloody Elbow</a></td>
+            <td class="mr-2" href="{{ url_for('custom.get_rankings', bloody_elbow_headline = bloody_elbow_headline) }}"><a href = {{ bloody_elbow_headline_link }}>{{ bloody_elbow_headline }}</a><br><br>{{ bloody_elbow_description }}</td>
+      
+        </tr>
+
+        
+
+      </tr>
+    </tbody>
+  </table>
+  <br>
+  <br>
+  <br>
+  <br>
+
+  <h2 style="text-align:center">MMA Pound-for-Pound Rankings</h2>
+  <br>
+  <br>
+  
+  <table class="table table-bordered">
+    
+      <thead>
+        <tr>
+          <th scope="col" width=5% style="text-align:center"><h1 style="color:FireBrick;font-size:25px;">Ranking</h1></th>
+          <th scope="col" width=50% style="text-align:center"><h1 style="color:FireBrick;font-size:25px;">Name</h1></th>
+          <th scope="col" style="text-align:center"><h1 style="color:FireBrick;font-size:25px;">Record</h1></th>
+   
+  
+        </tr>
+      </thead>
+      <tbody>
+  
+          <tr>
+              <td>1.</td>
+              <td class="mr-2" href="{{ url_for('custom.get_rankings', first_name = first_name, first_fighter_link = first_fighter_link) }}"><a href = {{ first_fighter_link }}>{{ first_name }}</a></td>
+              <td class="mr-2" href="{{ url_for('custom.get_rankings', first_record = first_record) }}">{{ first_record }}</a></td>
+  
+  
+          <tr>
+              <td>2.</td>
+              <td class="mr-2" href="{{ url_for('custom.get_rankings', second_name  = second_name, second_fighter_link = second_fighter_link ) }}"><a href = {{ second_fighter_link }}>{{ second_name  }}</a></td>
+              <td class="mr-2" href="{{ url_for('custom.get_rankings', second_record = second_record) }}">{{ second_record }}</a></td>
+              
+          </tr>
+  
+          <tr>
+              <td>3.</td>
+              <td class="mr-2" href="{{ url_for('custom.get_rankings', third_name  = third_name, third_fighter_link = third_fighter_link ) }}"><a href = {{ third_fighter_link }}>{{ third_name }}</a></td>
+              <td class="mr-2" href="{{ url_for('custom.get_rankings', third_record = third_record) }}">{{ third_record }}</a></td>
+          </tr>
+  
+          <tr>
+              <td>4.</td>
+              <td class="mr-2" href="{{ url_for('custom.get_rankings', fourth_name  = fourth_name, fourth_fighter_link = fourth_fighter_link ) }}"><a href = {{ fourth_fighter_link }}>{{ fourth_name }}</a></td>
+              <td class="mr-2" href="{{ url_for('custom.get_rankings', fourth_record = fourth_record) }}">{{ fourth_record }}</a></td>
+          </tr>
+  
+          <tr>
+              <td>5.</td>
+              <td class="mr-2" href="{{ url_for('custom.get_rankings', fifth_name  = fifth_name, fifth_fighter_link = fifth_fighter_link ) }}"><a href = {{ fifth_fighter_link }}>{{ fifth_name }}</a></td>
+              <td class="mr-2" href="{{ url_for('custom.get_rankings', fifth_record = fifth_record) }}">{{ fifth_record }}</a></td>
+          </tr>
+  
+          <tr>
+              <td>6.</td>
+              <td class="mr-2" href="{{ url_for('custom.get_rankings', sixth_name  = sixth_name, sixth_fighter_link = sixth_fighter_link ) }}"><a href = {{ sixth_fighter_link }}>{{ sixth_name }}</a></td>
+              <td class="mr-2" href="{{ url_for('custom.get_rankings', sixth_record = sixth_record) }}">{{ sixth_record }}</a></td>
+          </tr>
+  
+          <tr>
+              <td>7.</td>
+              <td class="mr-2" href="{{ url_for('custom.get_rankings', seventh_name  = seventh_name ) }}"><a href = {{ seventh_fighter_link }}>{{ seventh_name }}</a></td>
+              <td class="mr-2" href="{{ url_for('custom.get_rankings', seventh_record = seventh_record) }}">{{ seventh_record }}</a></td>
+          </tr>
+  
+          <tr>
+              <td>8.</td>
+              <td class="mr-2" href="{{ url_for('custom.get_rankings', eighth_name  = eighth_name ) }}"><a href = {{ eighth_fighter_link }}>{{ eighth_name }}</a></td>
+              <td class="mr-2" href="{{ url_for('custom.get_rankings', eighth_record = eigth_record) }}">{{ eighth_record }}</a></td>
+          </tr>
+  
+          <tr>
+              <td>9.</td>
+              <td class="mr-2" href="{{ url_for('custom.get_rankings', ninth_name  = ninth_name ) }}"><a href = {{ ninth_fighter_link }}>{{ ninth_name }}</a></td>
+              <td class="mr-2" href="{{ url_for('custom.get_rankings', ninth_record = ninth_record) }}">{{ ninth_record }}</a></td>
+          </tr>
+  
+          <tr>
+              <td>10.</td>
+              <td class="mr-2" href="{{ url_for('custom.get_rankings', tenth_name  = tenth_name, tenth_fighter_link = tenth_fighter_link ) }}"><a href= {{ tenth_fighter_link }}>{{ tenth_name }}</a></td>
+              <td class="mr-2" href="{{ url_for('custom.get_rankings', tenth_record = tenth_record) }}">{{ tenth_record }}</a></td>
+          </tr>
+     
+          
+  
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <br>
+  
+    <p style="font-size:20px;"> <strong>Source:</strong></p>
+    <p style="font-size:20px;"> <a href="http://rankingmma.com/p4p/">http://rankingmma.com/p4p</a> </p>
+
+{% endblock content %}
