@@ -2,7 +2,7 @@ import requests
 import json
 import datetime
 from flask import Blueprint, render_template, request, redirect, url_for
-from flask_sqlalchemy import SQLAlchemy
+
 from bs4 import BeautifulSoup
 
 custom = Blueprint('custom', __name__)
