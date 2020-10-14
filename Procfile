@@ -1,1 +1,1 @@
-web uwsgi uwsgi.ini
+gunicorn app:bayarea_mma_news --preload -b 0.0.0.0:5000 
