@@ -1,15 +1,15 @@
 import requests
 import json
 import datetime
+import config
 from flask import Blueprint, render_template, request, redirect, url_for
-
 from bs4 import BeautifulSoup
 
 custom = Blueprint('custom', __name__)
 
 url = "https://apidojo-yahoo-finance-v1.p.rapidapi.com/stock/v2/get-statistics"
 headers = {'x-rapidapi-host': "apidojo-yahoo-finance-v1.p.rapidapi.com",
-                'x-rapidapi-key': "14cbe34b16msh88adb496424ae59p178c08jsne132fa29607f"}
+                'x-rapidapi-key': config.api_key}
 
 apple_params = {"region": "US", "symbol": "AAPL"}
 cisco_params = {"region": "US", "symbol": "CSCO"}
@@ -187,7 +187,7 @@ def get_rankings():
     article = soup.find('div', class_='c-compact-river__entry')
 
     mma_mania_headline = article.h2.text
-    mma_mania_description = article.p
+    mma_mania_description = article.p.text
 
     for link in article.h2:
         mma_mania_headline_link = link.get('href')
