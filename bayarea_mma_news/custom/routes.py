@@ -1,15 +1,17 @@
 import requests
 import json
 import datetime
-import config
+import os
 from flask import Blueprint, render_template, request, redirect, url_for
 from bs4 import BeautifulSoup
 
 custom = Blueprint('custom', __name__)
 
+api_key = os.environ.get('api_key')
+
 url = "https://apidojo-yahoo-finance-v1.p.rapidapi.com/stock/v2/get-statistics"
 headers = {'x-rapidapi-host': "apidojo-yahoo-finance-v1.p.rapidapi.com",
-                'x-rapidapi-key': config.api_key}
+                'x-rapidapi-key': api_key}
 
 apple_params = {"region": "US", "symbol": "AAPL"}
 cisco_params = {"region": "US", "symbol": "CSCO"}
