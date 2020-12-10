@@ -159,7 +159,7 @@ def get_news():
 
     fremont_source = requests.get(fremont_url).text
     fremont_soup = BeautifulSoup(fremont_source, 'html.parser')
-    fremont_aqi = fremont_soup.find('div', class_="aqi-value").text
+    fremont_aqi = 'The current Air Quality in Fremont, CA is ' + fremont_soup.find('div', class_="aqi-value").text
 
 
 
@@ -169,7 +169,7 @@ def get_news():
 
     san_francisco_source = requests.get(san_francisco_url).text
     san_francisco_soup = BeautifulSoup(san_francisco_source, 'html.parser')
-    san_francisco_aqi = san_francisco_soup.find('div', class_="aqi-value").text
+    san_francisco_aqi = 'The current Air Quality in San Francisco, CA is ' + san_francisco_soup.find('div', class_="aqi-value").text
 
 
     # San Jose
@@ -178,7 +178,7 @@ def get_news():
 
     san_jose_source = requests.get(san_jose_url).text
     san_jose_soup = BeautifulSoup(san_jose_source, 'html.parser')
-    san_jose_aqi = san_jose_soup.find('div', class_='aqi-value').text
+    san_jose_aqi = 'The current Air Quality in San Jose, CA is ' +  san_jose_soup.find('div', class_='aqi-value').text
 
     # Marin City
 
@@ -186,7 +186,7 @@ def get_news():
 
     marin_source = requests.get(marin_url).text
     marin_soup = BeautifulSoup(marin_source, 'html.parser')
-    marin_aqi = marin_soup.find('div', class_='aqi-value').text
+    marin_aqi = 'The current Air Quality in Marin City, CA is ' + marin_soup.find('div', class_='aqi-value').text
 
 
     return render_template('home.html',
@@ -214,7 +214,7 @@ def get_news():
                                 fremont_aqi = fremont_aqi,
                                 san_jose_aqi = san_jose_aqi,
                                 san_francisco_aqi = san_francisco_aqi,
-                                marin_city_aqi = marin_aqi
+                                marin_aqi = marin_aqi
                                 )  
 
 
