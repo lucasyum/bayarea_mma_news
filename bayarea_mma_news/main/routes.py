@@ -151,6 +151,43 @@ def get_news():
     marin_city_weather = f"The weather in {marin_city} at {time_now} is {temperature}, but feels like {feels_like}. The minimum temperature today will be {min_temperature} with a maximum temperature of {max_temperature}."
 
 
+    ## Air Quality Index
+
+    # Fremont
+
+    fremont_url = 'https://www.wunderground.com/health/us/ca/fremont/94538'
+
+    fremont_source = requests.get(fremont_url).text
+    fremont_soup = BeautifulSoup(fremont_source, 'html.parser')
+    fremont_aqi = fremont_soup.find('div', class_="aqi-value").text
+
+
+
+    # San Francisco
+
+    san_francisco_url = 'https://www.wunderground.com/health/us/ca/san%20francisco%20/94102'
+
+    san_francisco_source = requests.get(san_francisco_url).text
+    san_francisco_soup = BeautifulSoup(san_francisco_source, 'html.parser')
+    san_francisco_aqi = san_francisco_soup.find('div', class_="aqi-value").text
+
+
+    # San Jose
+
+    san_jose_url = 'https://www.wunderground.com/health/us/ca/san-jose/95135'
+
+    san_jose_source = requests.get(san_jose_url).text
+    san_jose_soup = BeautifulSoup(san_jose_source, 'html.parser')
+    san_jose_aqi = san_jose_soup.find('div', class_='aqi-value').text
+
+    # Marin City
+
+    marin_url = 'https://www.wunderground.com/health/us/ca/marin-city/94965'
+
+    marin_source = requests.get(marin_url).text
+    marin_soup = BeautifulSoup(marin_source, 'html.parser')
+    marin_aqi = marin_soup.find('div', class_='aqi-value').text
+
 
     return render_template('home.html',
                                 east_bay_title = east_bay_title,
@@ -172,7 +209,12 @@ def get_news():
                                 fremont_weather = fremont_weather,
                                 san_francisco_weather = san_francisco_weather,
                                 san_jose_weather = san_jose_weather,
-                                marin_city_weather = marin_city_weather
+                                marin_city_weather = marin_city_weather,
+
+                                fremont_aqi = fremont_aqi,
+                                san_jose_aqi = san_jose_aqi,
+                                san_francisco_aqi = san_francisco_aqi,
+                                marin_city_aqi = marin_aqi
                                 )  
 
 

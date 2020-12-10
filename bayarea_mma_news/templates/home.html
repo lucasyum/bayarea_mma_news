@@ -89,6 +89,45 @@
   <br>
   <br>
   <br>
+
+
+  <h1 style="text-align:center">Bay Area Air Quality</h1>
+  <br>
+  <br>
+
+
+  <table class="table table-bordered">
+  
+    <thead>
+      <tr>
+        <th scope="col" width=25% style="text-align:center"><h1 style="color:FireBrick;font-size:25px;">City</h1></th>
+        <th scope="col" width=100% style="text-align:center"><h1 style="color:FireBrick;font-size:25px;">Air Quality Index</h1></th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="text-align:center"><a href="https://www.accuweather.com/en/us/fremont/94538/weather-forecast/332130">Fremont</a></td>
+        <td class="mr-2" href="{{ url_for('main.get_news', fremont_aqi = fremont_aqi) }}">{{ fremont_aqi }}</a></td>
+        
+        <tr>
+          <td style="text-align:center"><a href="https://www.accuweather.com/en/us/san-francisco/94103/weather-forecast/347629">San Jose</a></td>
+          <td class="mr-2" href="{{ url_for('main.get_news', san_jose_aqi = san_jose_aqi) }}">{{ san_jose_aqi}}</a></td>
+        
+      </tr>
+      <tr>
+        <td style="text-align:center"><a href="https://www.accuweather.com/en/us/san-jose/95110/hourly-weather-forecast/347630">San Francisco</a></td>
+        <td class="mr-2" href="{{ url_for('main.get_news', san_francisco_aqi = san_francisco_aqi) }}">{{ san_francisco_aqi }}</a></td>
+        
+      </tr>
+      <tr>
+        <td style="text-align:center"><a href="https://www.accuweather.com/en/us/marin-city-ca/94965/weather-forecast/327093">Marin City</a></td>
+        <td class="mr-2" href="{{ url_for('main.get_news', marin_aqi = marin_aqi) }}">{{ marin_aqi }}</a></td>
+        
+      </tr>
+    </tbody>
+  </table>
+  
   <div class="tenor-gif-embed" data-postid="17932554" data-share-method="host" data-width="50%" data-aspect-ratio="1.0"><a href="https://tenor.com/view/cat-cat-jam-nod-pet-kitty-gif-17932554">Cat Cat Jam GIF</a> from <a href="https://tenor.com/search/cat-gifs">Cat GIFs</a></div><script type="text/javascript" async src="https://tenor.com/embed.js"></script>
 
  
